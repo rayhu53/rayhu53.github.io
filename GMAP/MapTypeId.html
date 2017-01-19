@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Google Maps API - MapTypeId</title>
+</head>
+
+<body onload="setMapType('ROADMAP');">
+
+<script>
+function setMapType(mapType)
+{
+    var myZoom = 12;
+    var myCenter = new google.maps.LatLng(25.0601031, 121.4865540);
+
+    var myOptions1 =
+    {
+        center: myCenter,
+        zoom: myZoom,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+
+    var myOptions2 =
+    {
+        center: myCenter,
+        zoom: myZoom,
+        mapTypeId: google.maps.MapTypeId.SATELLITE
+    };
+
+    var myOptions3 =
+    {
+        center: myCenter,
+        zoom: myZoom,
+        mapTypeId: google.maps.MapTypeId.HYBRID
+    };
+
+    var myOptions4 =
+    {
+        center: myCenter,
+        zoom: myZoom,
+        mapTypeId: google.maps.MapTypeId.TERRAIN
+    };
+
+    var myMap;
+
+    if (mapType == "ROADMAP")
+        myMap = new google.maps.Map(document.getElementById("myCanvas"), myOptions1);
+    else if (mapType == "SATELLITE")
+        myMap = new google.maps.Map(document.getElementById("myCanvas"), myOptions2);
+    else if (mapType == "HYBRID")
+        myMap = new google.maps.Map(document.getElementById("myCanvas"), myOptions3);
+    else if (mapType == "TERRAIN")
+        myMap = new google.maps.Map(document.getElementById("myCanvas"), myOptions4);   
+}
+</script>
+
+<form>
+<input type=button onclick="setMapType('ROADMAP');"   value="ROADMAP">
+<input type=button onclick="setMapType('SATELLITE');" value="SATELLITE">
+<input type=button onclick="setMapType('HYBRID');"    value="HYBRID">
+<input type=button onclick="setMapType('TERRAIN');"   value="TERRAIN">
+</form>
+
+<br>
+<div id="myCanvas" style="width:400px;height:300px;"></div>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABSQVw682rf1umRC75b4APUfmL4XAZl9U"></script>
+
+</body>
+</html>
