@@ -1,0 +1,48 @@
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Beginning of JavaScript Applet -------------------
+// 現在可用 C++ 的方式寫註解啦 !
+function scrollit_r2l(seed)
+{
+        var msg = "嗨！ 你現在看到的動畫訊息是用 Java Script 所撰寫，Ｃｏｏｌ...."
+	var out = " ";
+	var c   = 1;
+
+        if (seed > 100)
+        {
+            seed--;
+            var cmd="scrollit_r2l(" + seed + ")";
+            timerTwo=window.setTimeout(cmd, 100);
+	}
+        else if (seed <= 100 && seed > 0)
+        {
+            for (c=0 ; c < seed ; c++)
+                out+=" ";
+            out += msg;
+            seed--;
+            var cmd="scrollit_r2l(" + seed + ")";
+            window.status=out;
+            timerTwo=window.setTimeout(cmd, 100);
+        }
+        else if (seed <= 0)
+        {
+            if (-seed < msg.length)
+            {
+                out+=msg.substring(-seed, msg.length);
+                seed--;
+                var cmd="scrollit_r2l(" + seed + ")";
+                window.status=out;
+                timerTwo=window.setTimeout(cmd, 100);
+            }
+            else
+            {
+                window.status=" ";
+                timerTwo=window.setTimeout("scrollit_r2l(100)", 75);
+            }
+	}
+}
+// -- End of JavaScript code -------------- -->
+</SCRIPT>
+
+<BODY ONLOAD="timerONE=window.setTimeout('scrollit_r2l(100)', 500);"> </BODY>
+
+<H1>請注意畫面下之訊息<BR></H1>
