@@ -2,6 +2,7 @@
 <html>
 <head>
 <title>Google Maps API - MapTypeId</title>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABSQVw682rf1umRC75b4APUfmL4XAZl9U"></script>
 </head>
 
 <body onload="setMapType('ROADMAP');">
@@ -11,36 +12,12 @@ function setMapType(mapType)
 {
     var myZoom = 12;
     var myCenter = new google.maps.LatLng(25.0601031, 121.4865540);
-
-    var myOptions1 =
-    {
-        center: myCenter,
-        zoom: myZoom,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
-
-    var myOptions2 =
-    {
-        center: myCenter,
-        zoom: myZoom,
-        mapTypeId: google.maps.MapTypeId.SATELLITE
-    };
-
-    var myOptions3 =
-    {
-        center: myCenter,
-        zoom: myZoom,
-        mapTypeId: google.maps.MapTypeId.HYBRID
-    };
-
-    var myOptions4 =
-    {
-        center: myCenter,
-        zoom: myZoom,
-        mapTypeId: google.maps.MapTypeId.TERRAIN
-    };
-
     var myMap;
+
+    var myOptions1 = { center: myCenter, zoom: myZoom, mapTypeId: google.maps.MapTypeId.ROADMAP };
+    var myOptions2 = { center: myCenter, zoom: myZoom, mapTypeId: google.maps.MapTypeId.SATELLITE };
+    var myOptions3 = { center: myCenter, zoom: myZoom, mapTypeId: google.maps.MapTypeId.HYBRID };
+    var myOptions4 = { center: myCenter, zoom: myZoom, mapTypeId: google.maps.MapTypeId.TERRAIN };
 
     if (mapType == "ROADMAP")
         myMap = new google.maps.Map(document.getElementById("myCanvas"), myOptions1);
@@ -60,8 +37,6 @@ function setMapType(mapType)
 
 <br><br>
 <div id="myCanvas" style="width:400px;height:300px;"></div>
-
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABSQVw682rf1umRC75b4APUfmL4XAZl9U"></script>
 
 </body>
 </html>
