@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+
+<!--
+    $(selector).action()
+    - A $ sign to define/access jQuery
+    - A (selector) to "query (or find)" HTML elements
+    - A jQuery action() to be performed on the element(s)
+
+    eg.
+        $(this).hide() - hides the current element.
+        $("p").hide() - hides all <p> elements.
+        $(".test").hide() - hides all elements with class="test".
+        $("#test").hide() - hides the element with id="test".
+-->
+
+<script>
+$(document).ready(function()
+{
+    $("p").click(function()
+    {
+        $(this).hide();
+    });
+});
+</script>
+
+<p>If you click on me, I will disappear.</p>
+<p>Click me away!</p>
+<p>Click me too!</p>
+
+</body>
+</html>
